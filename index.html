@@ -1378,21 +1378,21 @@ footer {
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://blackbookbroker.vercel.app/?sent=1">
           <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_template" value="table">
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="form.name">Name</label>
-            <input type="text" required>
+            <input type="text" name="name" required>
           </div>
           <div class="form-group">
             <label data-i18n="form.phone">Phone / WhatsApp</label>
-            <input type="tel" placeholder="+350 / +34 / +44" required>
+            <input type="tel" name="phone" placeholder="+350 / +34 / +44" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-          <div class="form-group">
             <label data-i18n="form.interest">I'm Interested In</label>
-            <select>
+            <select name="interest">
               <option data-i18n="form.opt1">One-off request</option>
               <option data-i18n="form.opt2">Monthly retainer</option>
               <option data-i18n="form.opt3">Corporate package</option>
@@ -1400,13 +1400,17 @@ footer {
               <option data-i18n="form.opt5">Just exploring</option>
             </select>
           </div>
-        </div>
-        <div class="form-group">
-          <label data-i18n="form.message">What Do You Need?</label>
-          <textarea placeholder="Tell us what you're looking for, the more detail the better. No request is too big or too small."></textarea>
+          <div class="form-group">
+            <label data-i18n="form.message">What Do You Need?</label>
+            <textarea name="message" placeholder="Tell us what you're looking for, the more detail the better. No request is too big or too small."></textarea>
+          </div>
         </div>
         <button type="submit" class="form-submit" data-i18n="form.send">Send Request →</button>
       </form>
+      <div id="form-success" style="display:none;background:var(--card);border:1px solid var(--gold);border-radius:6px;padding:28px;text-align:center;margin-top:16px">
+        <p style="color:var(--gold);font-size:18px;font-weight:500;margin-bottom:8px">Request Received ✓</p>
+        <p style="color:var(--text-muted);font-size:14px">We'll get back to you within a few hours, usually sooner. Check your WhatsApp.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1506,5 +1510,21 @@ function setLang(lang) {
 if(!window.T){window.T={en:{"nav.services":"Services","nav.who":"Who It's For","nav.how":"How It Works","nav.pricing":"Pricing","nav.contact":"Get in Touch","hero.title":"Your <em>Black Book</em> on the Rock","hero.sub":"Premium concierge for discerning visitors, relocators, and professionals across Gibraltar and Southern Spain. We open doors that don't have handles.","hero.cta1":"WhatsApp Us →","hero.cta2":"Explore Services","pillars.label":"What We Do","pillars.title":"Access. Logistics.<br>Insider Knowledge.","pillars.desc":"We sell what money alone can't buy. Local connections, cross-border fluency, and knowledge from living on both sides.","pillar1.title":"Experiences","pillar2.title":"Logistics","pillar3.title":"Local Expertise","pillar4.title":"Problem Solving","svc.label":"Services","svc.title":"Everything You'd Ask a Well-Connected Local Friend","who.label":"Who It's For","who.title":"People Who Value Their Time","how.label":"How It Works","how.title":"One Message. We Handle the Rest.","sch.label":"The Moment","sch.title":"Schengen Changes <em>Everything</em>","price.label":"Pricing","price.title":"Transparent. Flexible.","cta.label":"Get in Touch","cta.title":"One Message Is All It Takes","form.send":"Send Request →"},es:{"nav.services":"Servicios","nav.who":"Para Quién","nav.how":"Cómo Funciona","nav.pricing":"Precios","nav.contact":"Contactar","hero.title":"Tu <em>Black Book</em> en el Peñón","hero.sub":"Conserjería premium para visitantes, profesionales y empresas en Gibraltar y el sur de España. Abrimos puertas que no tienen manilla.","hero.cta1":"WhatsApp →","hero.cta2":"Ver Servicios","pillars.label":"Qué Hacemos","pillars.title":"Acceso. Logística.<br>Conocimiento Local.","pillars.desc":"Vendemos lo que el dinero solo no puede comprar. Conexiones locales y conocimiento de ambos lados.","pillar1.title":"Experiencias","pillar2.title":"Logística","pillar3.title":"Experiencia Local","pillar4.title":"Resolución","svc.label":"Servicios","svc.title":"Todo Lo Que Le Pedirías a un Amigo Local","who.label":"Para Quién","who.title":"Personas Que Valoran Su Tiempo","how.label":"Cómo Funciona","how.title":"Un Mensaje. Nosotros Nos Encargamos.","sch.label":"El Momento","sch.title":"Schengen Lo Cambia <em>Todo</em>","price.label":"Precios","price.title":"Transparente. Flexible.","cta.label":"Contactar","cta.title":"Un Mensaje Es Todo","form.send":"Enviar →"},fr:{"nav.services":"Services","nav.who":"Pour Qui","nav.how":"Comment","nav.pricing":"Tarifs","nav.contact":"Contact","hero.title":"Votre <em>Black Book</em> sur le Rocher","hero.sub":"Conciergerie premium à Gibraltar et dans le sud de l'Espagne.","hero.cta1":"WhatsApp →","hero.cta2":"Découvrir","pillars.label":"Nos Services","pillars.title":"Accès. Logistique.<br>Savoir Local.","pillar1.title":"Expériences","pillar2.title":"Logistique","pillar3.title":"Expertise Locale","pillar4.title":"Résolution","svc.label":"Services","who.label":"Pour Qui","how.label":"Comment","sch.label":"Le Moment","sch.title":"Schengen Change <em>Tout</em>","price.label":"Tarifs","cta.label":"Contact","cta.title":"Un Message Suffit","form.send":"Envoyer →"},de:{"nav.services":"Leistungen","nav.contact":"Kontakt","hero.title":"Ihr <em>Black Book</em> am Felsen","hero.cta1":"WhatsApp →","pillars.label":"Angebot","sch.title":"Schengen Ändert <em>Alles</em>","form.send":"Anfrage →"},zh:{"nav.services":"服务","nav.contact":"联系","hero.title":"直布罗陀的<em>私人顾问</em>","hero.cta1":"WhatsApp →","pillars.label":"服务内容","sch.title":"申根改变<em>一切</em>","form.send":"发送 →"},ar:{"nav.services":"الخدمات","nav.contact":"تواصل","hero.title":"<em>دليلك الخاص</em> في جبل طارق","hero.cta1":"واتساب →","form.send":"إرسال →"},pt:{"nav.services":"Serviços","nav.contact":"Contacto","hero.title":"O Seu <em>Black Book</em> no Rochedo","hero.cta1":"WhatsApp →","form.send":"Enviar →"},ru:{"nav.services":"Услуги","nav.contact":"Связаться","hero.title":"Ваш <em>Black Book</em> на Скале","hero.cta1":"WhatsApp →","form.send":"Отправить →"}};}
 </script>
 
+<script>
+// Show success message if redirected back after form submission
+if (window.location.search.includes('sent=1')) {
+  window.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('.contact-form');
+    var success = document.getElementById('form-success');
+    if (form && success) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    // Clean URL
+    history.replaceState(null, '', window.location.pathname);
+  });
+}
+</script>
 </body>
 </html>
